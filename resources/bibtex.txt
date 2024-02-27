@@ -1,0 +1,6 @@
+@inproceedings{degeus2024tapps,
+  title={{Task-aligned Part-aware Panoptic Segmentation through Joint Object-Part Representations}},
+  author={{de Geus}, Daan and Dubbelman, Gijs},
+  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2024}
+}
