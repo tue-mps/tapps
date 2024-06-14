@@ -1,0 +1,171 @@
+version: 2.0
+comments:
+  -  for merging to panoptic and part-aware panoptic (and it should also be usable for PartPQ evaluation)
+
+dataset_spec_path: utils/panoptic_parts/panoptic_parts/specs/dataset_specs/ppp_datasetspec.yaml
+
+# To be used for evaluation
+ignore_label: 255
+
+# To be used for evaluation
+dataset_sid2eval_sid: {
+  # evaluated
+  1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8,
+  9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15,
+  16: 16, 17: 17, 18: 18, 19: 19, 20: 20, 21: 21, 23: 23,
+  25: 25, 28: 28, 34: 34, 35: 35, 38: 38, 39: 39, 40: 40,
+  42: 42, 45: 45, 46: 46, 48: 48, 49: 49, 50: 50, 53: 53,
+  54: 54, 56: 56, 58: 58, 62: 62, 63: 63, 43: 43, 70: 70,
+  82: 82, 69: 69, 74: 74, 75: 75, 80: 80, 81: 81, 84: 84,
+  86: 86, 24: 24, 92: 92, 93: 93, 94: 94, 95: 95, 96: 96,
+  97: 97, 99: 99,
+  # ignored
+  0: IGNORED, 22: IGNORED, 26: IGNORED, 27: IGNORED, 29: IGNORED, 30: IGNORED,
+  31: IGNORED, 32: IGNORED, 33: IGNORED, 36: IGNORED, 37: IGNORED, 41: IGNORED,
+  44: IGNORED, 47: IGNORED, 51: IGNORED, 52: IGNORED, 55: IGNORED, 57: IGNORED,
+  59: IGNORED, 60: IGNORED, 61: IGNORED, 64: IGNORED, 65: IGNORED, 66: IGNORED,
+  67: IGNORED, 68: IGNORED, 71: IGNORED, 72: IGNORED, 73: IGNORED, 76: IGNORED,
+  77: IGNORED, 78: IGNORED, 79: IGNORED, 83: IGNORED, 85: IGNORED, 87: IGNORED,
+  88: IGNORED, 89: IGNORED, 90: IGNORED, 91: IGNORED, 98: IGNORED,
+
+  # default
+  DEFAULT: IGNORED
+}
+
+# To be used for evaluation
+# TODO(panos, daan): what happens with IGNORED? (for evaluation seems its not used)
+dataset_sid_pid2eval_sid_pid: {
+  # evaluated
+  1_01: 1_01, 1_02: 1_04, 1_03: 1_03, 1_04: 1_03, 1_05: 1_04, 1_06: 1_02, 1_07: 1_05,
+  2_01: 2_01, 2_02: 2_01, 2_03: 2_02, 2_04: 2_03, 2_05: 2_04, 2_06: 2_01,
+  3_01: 3_01, 3_02: 3_01, 3_03: 3_01, 3_04: 3_02, 3_05: 3_03, 3_06: 3_04, 3_07: 3_05, 3_08: 3_05, 3_09: 3_06, 3_10: 3_07, 3_11: 3_06, 3_12: 3_07, 3_13: 3_08,
+  4_00: 4_01,
+  5_01: 5_01, 5_02: 5_02,
+  6_01: 6_01, 6_02: 6_01, 6_03: 6_01, 6_04: 6_01, 6_05: 6_02, 6_06: 6_03, 6_07: 6_03, 6_08: 6_04, 6_09: 6_04, 6_10: 6_05, 6_11: 6_06, 6_12: 6_07, 6_13: 6_08,
+  7_01: 7_01, 7_02: 7_01, 7_03: 7_01, 7_04: 7_01, 7_05: 7_02, 7_06: 7_04, 7_07: 7_04, 7_08: 7_03, 7_09: 7_03, 7_10: 7_04, 7_11: 7_05, 7_12: 7_06, 7_13: 7_07,
+  8_01: 8_01, 8_02: 8_02, 8_03: 8_02, 8_04: 8_03, 8_05: 8_03, 8_06: 8_04, 8_07: 8_05, 8_08: 8_06, 8_09: 8_07, 8_10: 8_08, 8_11: 8_07, 8_12: 8_08, 8_13: 8_07, 8_14: 8_08, 8_15: 8_07, 8_16: 8_08, 8_17: 8_09,
+  9_00: 9_01,
+  10_01: 10_01, 10_02: 10_01, 10_03: 10_01, 10_04: 10_02, 10_05: 10_02, 10_06: 10_03, 10_07: 10_04, 10_08: 10_04, 10_09: 10_05, 10_10: 10_06, 10_11: 10_07, 10_12: 10_07, 10_13: 10_07, 10_14: 10_07, 10_15: 10_07, 10_16: 10_07, 10_17: 10_07, 10_18: 10_07, 10_19: 10_08,
+  11_00: 11_01,
+  12_01: 12_01, 12_02: 12_02, 12_03: 12_02, 12_04: 12_03, 12_05: 12_03, 12_06: 12_04, 12_07: 12_05, 12_08: 12_06, 12_09: 12_07, 12_10: 12_08, 12_11: 12_07, 12_12: 12_08, 12_13: 12_07, 12_14: 12_08, 12_15: 12_07, 12_16: 12_08, 12_17: 12_09, 12_18: 12_10,
+  13_01: 13_01, 13_02: 13_01, 13_03: 13_01, 13_04: 13_02, 13_05: 13_02, 13_06: 13_03, 13_07: 13_08, 13_08: 13_08, 13_09: 13_08, 13_10: 13_08, 13_11: 13_04, 13_12: 13_05, 13_13: 13_06, 13_14: 13_06, 13_15: 13_06, 13_16: 13_06, 13_17: 13_06, 13_18: 13_06, 13_19: 13_06, 13_20: 13_06, 13_21: 13_07,
+  14_01: 14_01, 14_02: 14_01, 14_03: 14_02, 14_04: 14_03, 14_05: 14_04,
+  15_01: 15_01, 15_02: 15_02, 15_03: 15_02, 15_04: 15_03, 15_05: 15_03, 15_06: 15_01, 15_07: 15_01, 15_08: 15_04, 15_09: 15_05, 15_10: 15_06, 15_11: 15_07, 15_12: 15_08, 15_13: 15_09, 15_14: 15_09, 15_15: 15_10, 15_16: 15_09, 15_17: 15_09, 15_18: 15_10, 15_19: 15_11, 15_20: 15_11, 15_21: 15_12, 15_22: 15_11, 15_23: 15_11, 15_24: 15_12,
+  16_01: 16_01, 16_02: 16_02,
+  17_01: 17_01, 17_02: 17_01, 17_03: 17_01, 17_04: 17_02, 17_05: 17_02, 17_06: 17_03, 17_07: 17_04, 17_08: 17_04, 17_09: 17_05, 17_10: 17_06, 17_11: 17_07, 17_12: 17_07, 17_13: 17_07, 17_14: 17_07, 17_15: 17_07, 17_16: 17_07, 17_17: 17_07, 17_18: 17_07, 17_19: 17_08,
+  18_00: 18_01,
+  19_01: 19_01, 19_02: 19_02, 19_03: 19_02, 19_04: 19_02, 19_05: 19_02, 19_06: 19_03, 19_07: 19_04, 19_08: 19_05, 19_09: 19_06, 19_10: 19_06, 19_11: 19_06, 19_12: 19_06, 19_13: 19_07,
+  20_01: 20_01, 20_02: 20_01,
+
+  1: IGNORED, 2: IGNORED, 3: IGNORED,
+  4: 4_01,
+  5: IGNORED, 6: IGNORED, 7: IGNORED, 8: IGNORED,
+  9: 9_01,
+  10: IGNORED,
+  11: 11_01,
+  12: IGNORED, 13: IGNORED, 14: IGNORED, 15: IGNORED, 16: IGNORED, 17: IGNORED,
+  18: 18_01,
+  19: IGNORED, 20: IGNORED,
+
+  # 15: 15_00,
+  # 15_00: 15_00,
+
+  # ignored
+  # 1: IGNORED, 3: IGNORED, 5: IGNORED, 6: IGNORED, 7: IGNORED, 8: IGNORED, 10: IGNORED, 12: IGNORED, 13: IGNORED, 15: IGNORED, 16: IGNORED, 17: IGNORED, 19: IGNORED, 20: IGNORED,
+  # 1: 1_00, 1_00: 1_00,
+  # 1: 1_00, 3: IGNORED, 5: IGNORED, 6: IGNORED, 7: IGNORED, 8: IGNORED, 10: IGNORED, 12: IGNORED, 13: IGNORED, 15: 15_00, 16: IGNORED, 17: IGNORED, 19: IGNORED, 20: IGNORED,
+
+  # 0: IGNORED, 22: IGNORED, 26: IGNORED, 27: IGNORED, 29: IGNORED, 30: IGNORED,
+  # 31: IGNORED, 32: IGNORED, 33: IGNORED, 36: IGNORED, 37: IGNORED, 41: IGNORED,
+  # 44: IGNORED, 47: IGNORED, 51: IGNORED, 52: IGNORED, 55: IGNORED, 57: IGNORED,
+  # 59: IGNORED, 60: IGNORED, 61: IGNORED, 64: IGNORED, 65: IGNORED, 66: IGNORED,
+  # 67: IGNORED, 68: IGNORED, 71: IGNORED, 72: IGNORED, 73: IGNORED, 76: IGNORED,
+  # 77: IGNORED, 78: IGNORED, 79: IGNORED, 83: IGNORED, 85: IGNORED, 87: IGNORED,
+  # 88: IGNORED, 89: IGNORED, 90: IGNORED, 91: IGNORED, 98: IGNORED,
+
+  # default
+  DEFAULT: IGNORED
+}
+
+# Used for merging and evaluation
+eval_sid_things: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+eval_sid_stuff: [21, 23, 25, 28, 34, 35, 38, 39, 40, 42, 45, 46, 48, 49, 50, 53, 54, 56, 58, 62, 63, 43, 70, 82, 69, 74, 75, 80, 81, 84, 86, 24, 92, 93, 94, 95, 96, 97, 99]
+eval_sid_parts: [1, 2, 3, 5, 6, 7, 8, 10, 12, 13, 14, 15, 16, 17, 19]
+eval_sid_no_parts: [4, 9, 11, 18, 20, 21, 23, 25, 28, 34, 35, 38, 39, 40, 42, 45, 46, 48, 49, 50, 53, 54, 56, 58, 62, 63, 43, 70, 82, 69, 74, 75, 80, 81, 84, 86, 24, 92, 93, 94, 95, 96, 97, 99]
+
+# Used for merging panoptic & parts
+eval_sid_pid2eval_pid_flat: {
+   1_01: 1, 1_02: 2, 1_03: 3, 1_04: 4, 1_05: 5,
+   2_01: 6, 2_02: 7, 2_03: 8, 2_04: 9,
+   3_01: 10, 3_02: 11, 3_03: 12, 3_04: 13, 3_05: 14, 3_06: 15, 3_07: 16, 3_08: 17,
+   4_01: 18,
+   5_01: 19, 5_02: 20,
+   6_01: 21, 6_02: 22, 6_03: 23, 6_04: 24, 6_05: 25, 6_06: 26, 6_07: 27, 6_08: 28,
+   7_01: 29, 7_02: 30, 7_03: 31, 7_04: 32, 7_05: 33, 7_06: 34, 7_07: 35,
+   8_01: 36, 8_02: 37, 8_03: 38, 8_04: 39, 8_05: 40, 8_06: 41, 8_07: 42, 8_08: 43, 8_09: 44,
+   9_01: 45,
+   10_01: 46, 10_02: 47, 10_03: 48, 10_04: 49, 10_05: 50, 10_06: 51, 10_07: 52, 10_08: 53,
+   11_01: 54,
+   12_01: 55, 12_02: 56, 12_03: 57, 12_04: 58, 12_05: 59, 12_06: 60, 12_07: 61, 12_08: 62, 12_09: 63, 12_10: 64,
+   13_01: 65, 13_02: 66, 13_03: 67, 13_04: 68, 13_05: 69, 13_06: 70, 13_07: 71, 13_08: 72,
+   14_01: 73, 14_02: 74, 14_03: 75, 14_04: 76,
+   15_01: 77, 15_02: 78, 15_03: 79, 15_04: 80, 15_05: 81, 15_06: 82, 15_07: 83, 15_08: 84, 15_09: 85, 15_10: 86, 15_11: 87, 15_12: 88,
+   16_01: 89, 16_02: 90,
+   17_01: 91, 17_02: 92, 17_03: 93, 17_04: 94, 17_05: 95, 17_06: 96, 17_07: 97, 17_08: 98,
+   18_01: 99,
+   19_01: 100, 19_02: 101, 19_03: 102, 19_04: 103, 19_05: 104, 19_06: 105, 19_07: 106,
+   20_01: 107,
+}
+
+
+# Names for all labels that are to be evaluated
+# eval_sid2scene_label: {
+#   1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8,
+#   9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15,
+#   16: 16, 17: 17, 18: 18, 19: 19, 20: 20, 21: 21, 23: 23,
+#   25: 25, 28: 28, 34: 34, 35: 35, 38: 38, 39: 39, 40: 40,
+#   42: 42, 45: 45, 46: 46, 48: 48, 49: 49, 50: 50, 53: 53,
+#   54: 54, 56: 56, 58: 58, 62: 62, 63: 63, 43: 43, 70: 70,
+#   82: 82, 69: 69, 74: 74, 75: 75, 80: 80, 81: 81, 84: 84,
+#   86: 86, 24: 24, 92: 92, 93: 93, 94: 94, 95: 95, 96: 96,
+#   97: 97, 99: 99,
+# }
+
+eval_sid2scene_label: {
+  1: 'aeroplane', 2: 'bicycle', 3: 'bird', 4: 'boat', 5: 'bottle', 6: 'bus', 7: 'car', 8: 'cat',
+  9: 'chair', 10: 'cow', 11: 'table', 12: 'dog', 13: 'horse', 14: 'motorbike', 15: 'person',
+  16: 'pottedplant', 17: 'sheep', 18: 'sofa', 19: 'train', 20: 'tvmonitor', 21: 'bag', 23: 'bed',
+  25: 'bench', 28: 'book', 34: 'building', 35: 'cabinet', 38: 'ceiling', 39: 'cloth', 40: 'computer',
+  42: 'cup', 45: 'door', 46: 'fence', 48: 'floor', 49: 'flower', 50: 'food', 53: 'grass',
+  54: 'ground', 56: 'keyboard', 58: 'light', 62: 'mountain', 63: 'mouse', 43: 'curtain', 70: 'platform',
+  82: 'sign', 69: 'plate', 74: 'road', 75: 'rock', 80: 'shelves', 81: 'sidewalk', 84: 'sky',
+  86: 'snow', 24: 'bedclothes', 92: 'track', 93: 'tree', 94: 'truck', 95: 'wall', 96: 'water',
+  97: 'window', 99: 'wood'}
+
+# eval_pid_flat2scene_part_label: {
+#   0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16, 17: 17, 18: 18, 19: 19, 20: 20, 21: 21, 22: 22, 23: 23, 24: 24, 25: 25, 26: 26, 27: 27, 28: 28, 29: 29, 30: 30, 31: 31, 32: 32, 33: 33, 34: 34, 35: 35, 36: 36, 37: 37, 38: 38, 39: 39, 40: 40, 41: 41, 42: 42, 43: 43, 44: 44, 45: 45, 46: 46, 47: 47, 48: 48, 49: 49, 50: 50, 51: 51, 52: 52, 53: 53, 54: 54, 55: 55, 56: 56, 57: 57
+# }
+
+eval_pid_flat2scene_part_label: {
+  0: 'background',
+  1: 'aeroplane-body', 2: 'aeroplane-engine', 3: 'aeroplane-wing', 4: 'aeroplane-stern', 5: 'aeroplane-wheel',
+  6: 'bicycle-wheel', 7: 'bicycle-saddle', 8: 'bicycle-handlebar', 9: 'bicycle-chainwheel',
+  10: 'bird-head', 11: 'bird-beak', 12: 'bird-torso', 13: 'bird-neck', 14: 'bird-wing', 15: 'bird-leg', 16: 'bird-foot', 17: 'bird-tail',
+  18: 'boat-boat',
+  19: 'bottle-cap', 20: 'bottle-body',
+  21: 'bus-side', 22: 'bus-roof', 23: 'bus-mirror', 24: 'bus-plate', 25: 'bus-door', 26: 'bus-wheel', 27: 'bus-headlight', 28: 'bus-window',
+  29: 'car-side', 30: 'car-roof', 31: 'car-plate', 32: 'car-door', 33: 'car-wheel', 34: 'car-headlight', 35: 'car-window',
+  36: 'cat-head', 37: 'cat-eye', 38: 'cat-ear', 39: 'cat-nose', 40: 'cat-torso', 41: 'cat-neck', 42: 'cat-leg', 43: 'cat-paw', 44: 'cat-tail',
+  45: 'chair-chair',
+  46: 'cow-head', 47: 'cow-ear', 48: 'cow-muzzle', 49: 'cow-horn', 50: 'cow-torso', 51: 'cow-neck', 52: 'cow-leg', 53: 'cow-tail',
+  54: 'table-table',
+  55: 'dog-head', 56: 'dog-eye', 57: 'dog-ear', 58: 'dog-nose', 59: 'dog-torso', 60: 'dog-neck', 61: 'dog-leg', 62: 'dog-paw', 63: 'dog-tail', 64: 'dog-muzzle',
+  65: 'horse-head', 66: 'horse-ear', 67: 'horse-muzzle', 68: 'horse-torso', 69: 'horse-neck', 70: 'horse-leg', 71: 'horse-tail', 72: 'horse-hoof',
+  73: 'motorbike-wheel', 74: 'motorbike-handlebar', 75: 'motorbike-saddle', 76: 'motorbike-headlight',
+  77: 'person-head', 78: 'person-eye', 79: 'person-ear', 80: 'person-nose', 81: 'person-mouth', 82: 'person-hair', 83: 'person-torso', 84: 'person-neck', 85: 'person-arm', 86: 'person-hand', 87: 'person-leg', 88: 'person-foot',
+  89: 'pottedplant-pot', 90: 'pottedplant-plant',
+  91: 'sheep-head', 92: 'sheep-ear', 93: 'sheep-muzzle', 94: 'sheep-horn', 95: 'sheep-torso', 96: 'sheep-neck', 97: 'sheep-leg', 98: 'sheep-tail',
+  99: 'sofa-sofa',
+  100: 'train-head', 101: 'train-head side', 102: 'train-head roof', 103: 'train-headlight', 104: 'train-coach', 105: 'train-coach side', 106: 'train-coach roof',
+  107: 'tvmonitor-tvmonitor'
+}
