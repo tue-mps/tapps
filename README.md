@@ -97,7 +97,7 @@ The remaining code, specifically added for TAPPS, is licensed under an [MIT lice
 
 Please consider citing our work if it is useful for your research.
 
-```
+```BibTeX
 @inproceedings{degeus2024tapps,
   title={{Task-aligned Part-aware Panoptic Segmentation through Joint Object-Part Representations}},
   author={{de Geus}, Daan and Dubbelman, Gijs},
