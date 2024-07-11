@@ -1,6 +1,10 @@
 # TAPPS: Task-aligned Part-aware Panoptic Segmentation (CVPR 2024)
 ## [[Project page](https://tue-mps.github.io/tapps/)] [[Paper](https://openaccess.thecvf.com/content/CVPR2024/papers/de_Geus_Task-aligned_Part-aware_Panoptic_Segmentation_through_Joint_Object-Part_Representations_CVPR_2024_paper.pdf)]
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/task-aligned-part-aware-panoptic-segmentation-1/part-aware-panoptic-segmentation-on)](https://paperswithcode.com/sota/part-aware-panoptic-segmentation-on?p=task-aligned-part-aware-panoptic-segmentation-1)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/task-aligned-part-aware-panoptic-segmentation-1/part-aware-panoptic-segmentation-on-pascal)](https://paperswithcode.com/sota/part-aware-panoptic-segmentation-on-pascal?p=task-aligned-part-aware-panoptic-segmentation-1)
+
 Code for 'Task-aligned Part-aware Panoptic Segmentation through Joint Object-Part Representations', Daan de Geus and Gijs Dubbelman, CVPR 2024.
 
 ## Installation
