@@ -44,7 +44,7 @@ pip install git+https://github.com/mcordts/cityscapesScripts.git
 
 cd ..
 git clone https://github.com/tue-mps/tapps.git
-cd TAPPS
+cd tapps
 pip install timm submitit cython scikit-image psutil scikit-learn
 cd tapps/modeling/pixel_decoder/ops
 sh make.sh
