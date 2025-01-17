@@ -90,7 +90,7 @@ To run inference on a single image and store the visualized prediction, run:
 ```bash
 python inference_single_img.py --config /PATH/TO/CONFIG/FILE.yaml \
                                --model_weights /PATH/TO/MODEL/WEIGHTS.bin \
-                               --image /PATH/TO/IMAGE/FILE.jpg \  # can also be image format
+                               --image /PATH/TO/IMAGE/FILE.jpg \  # can also be another image format
                                --save_dir /PATH/WHERE/PREDICTION/WILL/BE/STORED/
 ```
 
@@ -99,7 +99,7 @@ For example:
 ```bash
 python inference_single_img.py --config configs/pascal/pps/tapps_pascal_swinb_cocoinit.yaml \
                                --model_weights checkpoints/tapps_pascal_swinb_cocoinit.bin \
-                               --image data/pascal/JPEGImages/2010_005252.jpg \  # can also be image format
+                               --image data/pascal/JPEGImages/2010_005252.jpg \ 
                                --save_dir predictions/
 ```
 
