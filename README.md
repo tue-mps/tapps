@@ -14,7 +14,7 @@ Code for 'Task-aligned Part-aware Panoptic Segmentation through Joint Object-Par
 ## Getting Started
 
 * [Prepare the datasets for TAPPS](datasets/README.md).
-* To use COCO panoptic pre-training, download the checkpoints following [these instructions](checkpoints/README.md).
+* To use COCO panoptic pre-training, download the checkpoints following [these instructions](checkpoints/README.md#coco-pre-trained-model-weights).
 
 ## Training
 To train a model, you need a configuration file. We provide [default configuration files](MODELS.md) for the models presented in our work. Our configs are designed to be trained on 4 GPUs, using a different number of GPUs likely requires changes to the learning rate.
