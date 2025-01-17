@@ -83,6 +83,27 @@ python eval/visualize_pps.py --pred_dir /PATH/WHERE/PREDICTIONS/ARE/STORED/ \
                              --dataset DATASET_NAME  # 'pascal', 'cityscapes' or 'pascal107'
 ```
 
+## Single-image inference
+To run inference on a single image and store the visualized prediction, run:
+
+
+```bash
+python inference_single_img.py --config /PATH/TO/CONFIG/FILE.yaml \
+                               --model_weights /PATH/TO/MODEL/WEIGHTS.bin \
+                               --image /PATH/TO/IMAGE/FILE.jpg \  # can also be image format
+                               --save_dir /PATH/WHERE/PREDICTION/WILL/BE/STORED/
+```
+
+For example:
+
+```bash
+python inference_single_img.py --config configs/pascal/pps/tapps_pascal_swinb_cocoinit.yaml \
+                               --model_weights checkpoints/tapps_pascal_swinb_cocoinit.bin \
+                               --image data/pascal/JPEGImages/2010_005252.jpg \  # can also be image format
+                               --save_dir predictions/
+```
+
+
 ## Models
 Check [this page](MODELS.md) for trained models and associated config files.
 
