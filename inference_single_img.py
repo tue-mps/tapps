@@ -63,16 +63,21 @@ def visualize_pps(pps_pred, eval_spec, dataset):
     pps_colors = experimental_colorize_label(uids, sid2color=sid2color, is_cpp=is_cpp)
     return pps_colors
 
-def resize_image(img):
+def resize_image(img, config):
     h, w = img.shape[1:3]
-    if h == w:
-        (h_new, w_new) = (800, 800)
-    elif h > w:
-        h_new = int(min(1333, 800/w * h))
-        w_new = 800
-    elif w > h:
-        h_new = 800
-        w_new = int(min(1333, 800/h * w))
+
+    if config.DATASETS.NAME == "Cityscapes":
+        h_new = 1024
+        w_new = 2048
+    else:
+        if h == w:
+            (h_new, w_new) = (800, 800)
+        elif h > w:
+            h_new = int(min(1333, 800/w * h))
+            w_new = 800
+        elif w > h:
+            h_new = 800
+            w_new = int(min(1333, 800/h * w))
 
     return F.interpolate(img.unsqueeze(0), size=(h_new, w_new), mode='bilinear').squeeze(0)
 
@@ -101,7 +106,7 @@ def inference_single_image(config, image_fn, model_weights, save_dir):
     # Load the image and resize it
     image = utils.read_image(image_fn, format=cfg.INPUT.FORMAT)
     image = torch.as_tensor(np.ascontiguousarray(image.transpose(2, 0, 1))).cuda().float()
-    image = resize_image(image)
+    image = resize_image(image, config=cfg)
     inputs = [{"image": image}]
 
     # Feed the image to the model and output the predictions.
